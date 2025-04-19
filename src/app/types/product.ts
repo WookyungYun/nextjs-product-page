@@ -32,3 +32,17 @@ export interface FetchProductsParams {
   skip?: number;
   query?: string;
 }
+
+export interface ProductPageProps {
+  searchParams: {
+    query?: string;
+  };
+}
+
+export interface SearchFormProps {
+  defaultQuery: string;
+}
+
+export interface ProductListProps {
+  query: string;
+}
