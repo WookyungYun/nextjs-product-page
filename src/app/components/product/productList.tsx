@@ -1,8 +1,8 @@
 'use client';
 
-import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
-import { useInfiniteProducts } from '../hooks/useProducts';
-import { ProductListProps } from '../types/product';
+import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
+import { useInfiniteProducts } from '../../hooks/useProducts';
+import { ProductListProps } from '../../types/product';
 import ProductCard from './productCard';
 
 export default function ProductList({ query }: ProductListProps) {

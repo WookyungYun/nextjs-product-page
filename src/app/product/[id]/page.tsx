@@ -1,5 +1,5 @@
 import { fetchProduct } from '@/app/api/products';
-import ProductDetail from '@/app/components/produtDetail';
+import ProductDetail from '@/app/components/product/produtDetail';
 import { ProductDetailPageProps } from '@/app/types/product';
 
 export default async function ProductDetailPage({ params }: ProductDetailPageProps) {

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { ProductCardProps } from '../types/product';
+import { ProductCardProps } from '../../types/product';
 import Link from 'next/link';
 
 export default function ProductCard({ product }: ProductCardProps) {

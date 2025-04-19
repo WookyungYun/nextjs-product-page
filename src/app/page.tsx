@@ -1,5 +1,5 @@
-import ProductList from './components/productList';
-import SearchForm from './components/searchForm';
+import ProductList from './components/product/productList';
+import SearchForm from './components/search/searchForm';
 import { ProductPageProps } from './types/product';
 
 export default async function ProductsPage({ searchParams }: ProductPageProps) {

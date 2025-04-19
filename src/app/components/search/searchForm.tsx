@@ -1,4 +1,4 @@
-import { SearchFormProps } from '../types/product';
+import { SearchFormProps } from '@/app/types/product';
 
 export default function SearchForm({ defaultQuery }: SearchFormProps) {
   return (
