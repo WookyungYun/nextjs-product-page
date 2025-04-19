@@ -65,7 +65,7 @@ export interface ProductDetailProps {
 
 export interface ViewModeButtonsProps {
   viewMode: ViewMode;
-  setViewMode: (mode: ViewMode) => void;
+  onClick: (mode: ViewMode) => void;
 }
 
 export interface ProductListWrapperProps {
