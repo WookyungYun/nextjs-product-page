@@ -57,6 +57,7 @@ export interface ProductListProps {
 
 export interface ProductCardProps {
   product: Product;
+  viewMode: ViewMode;
 }
 
 export interface ProductDetailProps {

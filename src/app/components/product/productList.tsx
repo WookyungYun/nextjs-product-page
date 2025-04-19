@@ -3,7 +3,7 @@
 import { useInfiniteScroll } from '../../hooks/useInfiniteScroll';
 import { useInfiniteProducts } from '../../hooks/useProducts';
 import { ProductListProps } from '../../types/product';
-import { ProductsGrid } from './product.style';
+import { CardWrapper, ProductsGrid } from './product.style';
 import ProductCard from './productCard';
 
 export default function ProductList({ query, viewMode }: ProductListProps) {
@@ -21,7 +21,9 @@ export default function ProductList({ query, viewMode }: ProductListProps) {
   return (
     <ProductsGrid $viewMode={viewMode}>
       {allProducts?.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <CardWrapper key={product.id}>
+          <ProductCard product={product} viewMode={viewMode} />
+        </CardWrapper>
       ))}
       {productCount === 0 && <p>일치하는 결과가 없습니다.</p>}
       {!isFetchingNextPage && !hasNextPage && productCount > 0 && <p>더 이상 불러올 수 없습니다.</p>}

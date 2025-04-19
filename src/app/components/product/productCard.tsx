@@ -1,17 +1,28 @@
 import Image from 'next/image';
 import { ProductCardProps } from '../../types/product';
-import Link from 'next/link';
+import { Brand, Card, InfoSection, Original, Price, PriceWrapper, Rating, Star, StyledLink, Title } from './product.style';
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, viewMode }: ProductCardProps) {
+  const discountedPrice = (product.price / (1 - product.discountPercentage / 100)).toFixed(2);
+  const reviewCount = product.reviews?.length || 0;
   return (
-    <Link href={`/product/${product.id}`}>
-      <li>
+    <StyledLink href={`/product/${product.id}`}>
+      <Card $isList={viewMode === 'list'}>
         <Image src={product.thumbnail} alt={product.title} width={300} height={300} />
-        <h3>{product.title}</h3>
-        <p>{product.price}원</p>
-        <p>{product.rating}</p>
-        <p>{product.reviews?.length}개</p>
-      </li>
-    </Link>
+        <InfoSection>
+          <Brand>{product.brand}</Brand>
+          <Title>{product.title}</Title>
+          <PriceWrapper>
+            <Price>${product.price}</Price>
+            {product.discountPercentage > 0 && <Original>${discountedPrice}</Original>}
+          </PriceWrapper>
+          <Rating>
+            <Star>★</Star>
+            {product.rating.toFixed(1)}
+            <span style={{ color: '#9ca3af' }}>({reviewCount})</span>
+          </Rating>
+        </InfoSection>
+      </Card>
+    </StyledLink>
   );
 }
