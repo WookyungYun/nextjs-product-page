@@ -6,7 +6,7 @@ import ViewModeButtons from './viewModeButtons';
 import { ProductListWrapperProps, ViewMode } from '@/app/types/product';
 import { setViewModeLocalStorage } from '@/app/utils/viewMode';
 
-export default function ProductListWrapper({ query }: ProductListWrapperProps) {
+export default function ProductListWrapper({ query, sortBy, order }: ProductListWrapperProps) {
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const handleViewModeChange = (mode: ViewMode) => {
     setViewMode(mode);
@@ -15,7 +15,7 @@ export default function ProductListWrapper({ query }: ProductListWrapperProps) {
   return (
     <>
       <ViewModeButtons viewMode={viewMode} onClick={handleViewModeChange} />
-      <ProductList query={query} viewMode={viewMode} />
+      <ProductList query={query} viewMode={viewMode} sortBy={sortBy} order={order} />
     </>
   );
 }

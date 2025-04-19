@@ -2,10 +2,12 @@ import { BASE_URL } from '../constants/apiConstants';
 import { FetchProductsParams, Product, ProductsResponse } from '../types/product';
 
 // 상풍 리스트
-export const fetchProducts = async ({ skip = 0, query = '' }: FetchProductsParams): Promise<ProductsResponse> => {
+export const fetchProducts = async ({ skip = 0, query = '', sortBy = 'title', order = 'asc' }: FetchProductsParams): Promise<ProductsResponse> => {
   const params = new URLSearchParams({
     skip: String(skip),
-    limit: '20'
+    limit: '20',
+    sortBy,
+    order
   });
 
   if (query) params.set('q', query);

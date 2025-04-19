@@ -67,3 +67,26 @@ export const SearchButton = styled.button`
     box-shadow: 0 0 0 2px rgba(107, 114, 128, 0.2);
   }
 `;
+
+export const SortBar = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+`;
+
+export const SortButton = styled.button<{ $active?: boolean }>`
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.5rem;
+  color: ${(props) => (props.$active ? '#1f2937' : '#9ca3af')};
+  border-bottom: 2px solid ${(props) => (props.$active ? '#1f2937' : 'transparent')};
+  font-weight: ${(props) => (props.$active ? 600 : 400)};
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    color: #1f2937;
+  }
+`;

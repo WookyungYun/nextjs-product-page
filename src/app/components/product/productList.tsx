@@ -7,8 +7,8 @@ import LoadingSpinner from '../common/loadingSpinner';
 import { CardWrapper, CenteredMessage, ProductsGrid } from './product.style';
 import ProductCard from './productCard';
 
-export default function ProductList({ query, viewMode }: ProductListProps) {
-  const { data, isLoading, isFetchingNextPage, hasNextPage, fetchNextPage } = useInfiniteProducts(query);
+export default function ProductList({ query, viewMode, sortBy, order }: ProductListProps) {
+  const { data, isLoading, isFetchingNextPage, hasNextPage, fetchNextPage } = useInfiniteProducts(query, sortBy, order);
   const allProducts = data?.pages.flatMap((page) => page.products) ?? [];
   const productCount = allProducts?.length ?? 0;
 

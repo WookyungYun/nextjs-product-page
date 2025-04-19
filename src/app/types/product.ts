@@ -31,6 +31,8 @@ export interface ProductsResponse {
 export interface FetchProductsParams {
   skip?: number;
   query?: string;
+  sortBy?: string;
+  order?: Order;
 }
 
 export interface ProductDetailPageProps {
@@ -38,10 +40,12 @@ export interface ProductDetailPageProps {
     id: string;
   };
 }
-
+export type Order = 'asc' | 'desc';
 export interface ProductPageProps {
   searchParams: {
     query?: string;
+    sortBy?: string;
+    order?: Order;
   };
 }
 
@@ -50,9 +54,12 @@ export interface SearchFormProps {
 }
 
 export type ViewMode = 'list' | 'grid';
+
 export interface ProductListProps {
   query: string;
   viewMode: ViewMode;
+  sortBy?: string;
+  order?: Order;
 }
 
 export interface ProductCardProps {
@@ -71,4 +78,6 @@ export interface ViewModeButtonsProps {
 
 export interface ProductListWrapperProps {
   query: string;
+  sortBy?: string;
+  order?: Order;
 }
