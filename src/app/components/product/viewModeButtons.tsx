@@ -1,10 +1,11 @@
 import { ViewModeButtonsProps } from '@/app/types/product';
+import { Button, ButtonWrapper } from './product.style';
 
 export default function ViewModeButtons({ onClick }: ViewModeButtonsProps) {
   return (
-    <div className='flex gap-2'>
-      <button onClick={() => onClick('grid')}>Grid</button>
-      <button onClick={() => onClick('list')}>List</button>
-    </div>
+    <ButtonWrapper>
+      <Button onClick={() => onClick('grid')}>Grid</Button>
+      <Button onClick={() => onClick('list')}>List</Button>
+    </ButtonWrapper>
   );
 }

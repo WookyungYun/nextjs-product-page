@@ -113,3 +113,26 @@ export const Rating = styled.div`
 export const Star = styled.span`
   color: #fbbf24;
 `;
+
+// view mode button
+export const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+`;
+
+export const Button = styled.button<{ $isActive?: boolean }>`
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e5e7eb;
+    border-color: #cbd5e1;
+  }
+`;
