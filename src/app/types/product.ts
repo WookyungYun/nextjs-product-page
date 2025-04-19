@@ -33,6 +33,12 @@ export interface FetchProductsParams {
   query?: string;
 }
 
+export interface ProductDetailPageProps {
+  params: {
+    id: string;
+  };
+}
+
 export interface ProductPageProps {
   searchParams: {
     query?: string;
@@ -45,4 +51,12 @@ export interface SearchFormProps {
 
 export interface ProductListProps {
   query: string;
+}
+
+export interface ProductCardProps {
+  product: Product;
+}
+
+export interface ProductDetailProps {
+  product: Product;
 }
