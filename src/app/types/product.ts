@@ -49,8 +49,10 @@ export interface SearchFormProps {
   defaultQuery: string;
 }
 
+export type ViewMode = 'list' | 'grid';
 export interface ProductListProps {
   query: string;
+  viewMode: ViewMode;
 }
 
 export interface ProductCardProps {
@@ -59,4 +61,13 @@ export interface ProductCardProps {
 
 export interface ProductDetailProps {
   product: Product;
+}
+
+export interface ViewModeButtonsProps {
+  viewMode: ViewMode;
+  setViewMode: (mode: ViewMode) => void;
+}
+
+export interface ProductListWrapperProps {
+  query: string;
 }

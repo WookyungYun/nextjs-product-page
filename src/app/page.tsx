@@ -1,4 +1,4 @@
-import ProductList from './components/product/productList';
+import ProductListWrapper from './components/product/productListWrapper';
 import SearchForm from './components/search/searchForm';
 import { ProductPageProps } from './types/product';
 
@@ -9,7 +9,7 @@ export default async function ProductsPage({ searchParams }: ProductPageProps) {
   return (
     <>
       <SearchForm defaultQuery={query} />
-      <ProductList query={query} />
+      <ProductListWrapper query={query} />
     </>
   );
 }
