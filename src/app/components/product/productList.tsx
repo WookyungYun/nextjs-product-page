@@ -23,7 +23,7 @@ export default function ProductList({ query, viewMode }: ProductListProps) {
       {allProducts?.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
-      {productCount && <p>일치하는 결과가 없습니다.</p>}
+      {productCount === 0 && <p>일치하는 결과가 없습니다.</p>}
       {!isFetchingNextPage && !hasNextPage && productCount > 0 && <p>더 이상 불러올 수 없습니다.</p>}
     </ProductsGrid>
   );
