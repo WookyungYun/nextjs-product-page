@@ -136,3 +136,10 @@ export const Button = styled.button<{ $isActive?: boolean }>`
     border-color: #cbd5e1;
   }
 `;
+
+export const CenteredMessage = styled.p`
+  text-align: center;
+  color: #6b7280;
+  padding: 3rem 0;
+  font-size: 1rem;
+`;
