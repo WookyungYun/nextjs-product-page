@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 프로젝트 소개
 
-## Getting Started
+Next.js를 활용해 만든 상품 목록 페이지입니다. 서버 사이드 렌더링(SSR)과 클라이언트 사이드 렌더링(CSR)을 적절히 분리하여 구현했습니다.
 
-First, run the development server:
+## 주요 기능
+
+1. **상품 검색**
+
+   - 상품명으로 빠르게 검색
+   - 실시간으로 검색 결과 표시
+   - URL 파라미터를 통한 검색 상태 유지
+   - 새로고침 후에도 검색 상태 유지
+
+2. **정렬 기능**
+
+   - 인기순으로 기본값 정렬 (평점 높은순)
+   - 직관적인 정렬 버튼 UI
+   - 새로고침 후에도 검색 상태 유지
+
+3. **뷰 모드 전환**
+
+   - 그리드/리스트 뷰 선택 가능
+   - 사용자 선호 뷰 모드 자동 저장
+   - 24시간마다 새로운 뷰 모드 추천
+
+4. **무한 스크롤**
+   - 커스텀 훅을 활용한 무한 스크롤 구현
+   - 스크롤 위치에 따른 데이터 자동 로딩
+   - 디바운스 처리로 성능 최적화
+   - React Query의 `useInfiniteQuery` 활용
+
+## SSR과 CSR의 분리
+
+### 서버 컴포넌트 (SSR)
+
+- **초기 페이지 로딩 최적화**
+  - 서버에서 HTML을 미리 렌더링하여 빠른 첫 화면 표시
+  - SEO 최적화로 검색 엔진 노출도 향상
+  - 초기 데이터를 서버에서 미리 가져와 사용자 경험 개선
+
+### 클라이언트 컴포넌트 (CSR)
+
+- **동적 상호작용 최적화**
+  - 검색, 정렬, 뷰 모드 전환 등 사용자 상호작용 처리
+  - 필요한 컴포넌트만 클라이언트에서 렌더링하여 성능 향상
+  - 로컬 스토리지를 활용한 사용자 설정 저장
+
+## 사용한 기술
+
+- **Next.js**
+- **TypeScript**
+- **Styled Component**
+- **tanstack/react-query**
+
+## 실행 방법
 
 ```bash
+# 개발 서버 실행
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+## 환경 변수 설정
+프로젝트를 실행하기 위해 `.env.local` 파일을 생성하고 다음 환경 변수를 추가해주세요:
+
+env
+NEXT_PUBLIC_API_BASE_URL=https://dummyjson.com/products
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
