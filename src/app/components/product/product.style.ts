@@ -15,7 +15,6 @@ export const ProductsGrid = styled.ul<{ $viewMode: ViewMode }>`
 `;
 
 export const PageContainer = styled.div`
-  max-width: 1440px;
   margin: 0 auto;
   padding: 4rem 2rem;
   background-color: #f9f9f9;
