@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ProductCardProps } from '../../types/product';
-import { Brand, Card, InfoSection, Original, Price, PriceWrapper, Rating, Star, StyledLink, Title } from './product.style';
+import { Brand, Card, ImageWrapper, InfoSection, Original, Price, PriceWrapper, Rating, Star, StyledLink, Title } from './product.style';
 
 export default function ProductCard({ product, viewMode }: ProductCardProps) {
   const discountedPrice = (product.price / (1 - product.discountPercentage / 100)).toFixed(2);
@@ -8,7 +8,9 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
   return (
     <StyledLink href={`/product/${product.id}`}>
       <Card $isList={viewMode === 'list'}>
-        <Image src={product.thumbnail} alt={product.title} width={300} height={300} />
+        <ImageWrapper>
+          <Image src={product.thumbnail} alt={product.title} fill style={{ objectFit: 'contain' }} />
+        </ImageWrapper>
         <InfoSection>
           <Brand>{product.brand}</Brand>
           <Title>{product.title}</Title>

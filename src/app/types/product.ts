@@ -84,6 +84,6 @@ export interface ProductListWrapperProps {
 
 export interface ScrollToTopProps {
   query: string;
-  sortBy: string;
-  order: Order;
+  sortBy?: string;
+  order?: Order;
 }

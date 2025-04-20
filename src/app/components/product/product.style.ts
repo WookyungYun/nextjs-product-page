@@ -160,3 +160,13 @@ export const ScrollToTopButton = styled.button`
   font-size: 1.25rem;
   cursor: pointer;
 `;
+
+export const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+`;
