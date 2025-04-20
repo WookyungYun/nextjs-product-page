@@ -32,6 +32,7 @@ export default function ProductList({ query, viewMode, sortBy, order }: ProductL
 
       {isLoading ? <LoadingSpinner /> : productCount === 0 && <CenteredMessage>일치하는 결과가 없습니다.</CenteredMessage>}
       {!isFetchingNextPage && !hasNextPage && productCount > 0 && <CenteredMessage>더 이상 불러올 수 없습니다.</CenteredMessage>}
+      {isFetchingNextPage && <LoadingSpinner />}
       <ScrollToTop query={query} sortBy={sortBy} order={order} />
     </>
   );
