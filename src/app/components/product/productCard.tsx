@@ -8,7 +8,7 @@ export default function ProductCard({ product, viewMode }: ProductCardProps) {
   return (
     <StyledLink href={`/product/${product.id}`}>
       <Card $isList={viewMode === 'list'}>
-        <ImageWrapper>
+        <ImageWrapper $viewMode={viewMode}>
           <Image src={product.thumbnail} alt={product.title} fill style={{ objectFit: 'contain' }} />
         </ImageWrapper>
         <InfoSection>

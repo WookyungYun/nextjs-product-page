@@ -161,9 +161,9 @@ export const ScrollToTopButton = styled.button`
   cursor: pointer;
 `;
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div<{ $viewMode: ViewMode }>`
   position: relative;
-  width: 100%;
+  width: ${({ $viewMode }) => ($viewMode === 'list' ? '300px' : '100%')};
   height: 200px;
   display: flex;
   align-items: center;
