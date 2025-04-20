@@ -55,12 +55,9 @@ Next.js를 활용해 만든 상품 목록 페이지입니다. 서버 사이드 �
 ## 실행 방법
 
 ```bash
+# 의존성 설치
+npm install
+
 # 개발 서버 실행
 npm run dev
-
-## 환경 변수 설정
-프로젝트를 실행하기 위해 `.env.local` 파일을 생성하고 다음 환경 변수를 추가해주세요:
-
-env
-NEXT_PUBLIC_API_BASE_URL=https://dummyjson.com/products
 ```
