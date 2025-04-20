@@ -6,6 +6,7 @@ import { ProductListProps } from '../../types/product';
 import LoadingSpinner from '../common/loadingSpinner';
 import { CardWrapper, CenteredMessage, ProductsGrid } from './product.style';
 import ProductCard from './productCard';
+import ScrollToTop from './scrollToTop';
 
 export default function ProductList({ query, viewMode, sortBy, order }: ProductListProps) {
   const { data, isLoading, isFetchingNextPage, hasNextPage, fetchNextPage } = useInfiniteProducts(query, sortBy, order);
@@ -31,6 +32,7 @@ export default function ProductList({ query, viewMode, sortBy, order }: ProductL
 
       {isLoading ? <LoadingSpinner /> : productCount === 0 && <CenteredMessage>일치하는 결과가 없습니다.</CenteredMessage>}
       {!isFetchingNextPage && !hasNextPage && productCount > 0 && <CenteredMessage>더 이상 불러올 수 없습니다.</CenteredMessage>}
+      <ScrollToTop query={query} sortBy={sortBy} order={order} />
     </>
   );
 }

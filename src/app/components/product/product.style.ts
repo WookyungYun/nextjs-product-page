@@ -142,3 +142,21 @@ export const CenteredMessage = styled.p`
   padding: 3rem 0;
   font-size: 1rem;
 `;
+
+export const ScrollToTopButton = styled.button`
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 50;
+  width: 48px;
+  height: 48px;
+  background-color: #111827;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+`;
